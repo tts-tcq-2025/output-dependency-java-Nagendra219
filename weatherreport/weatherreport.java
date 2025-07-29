@@ -33,6 +33,9 @@ public class WeatherReport {
         String report = Report(sensor);
         System.out.println(report);
         assert(report != null);
+
+        assert(report.contains("rain") || report.contains("Cloudy")) :
+            "Bug Exposed! Expected rain/cloudy, but got: '" + report + "' for high precipitation & low wind.";
     }
     public static void main(String[] args) {
         TestRainy();
